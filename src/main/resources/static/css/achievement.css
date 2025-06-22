@@ -1,0 +1,95 @@
+
+.achievement-wrapper {
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.achievement-section {
+    margin-bottom: 40px;
+}
+
+.achievement-section h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.flag-icon {
+    width: 28px;
+    height: 18px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20%;
+}
+
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.achievement-item {
+    width: 600px; /* Fixed width for all blocks */
+    margin: 12px auto; /* Centered horizontally */
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.achievement-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.achievement-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.achievement-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.achievement-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.achievement-date {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.achievement-status {
+    font-weight: bold;
+    color: green;
+    padding-left: 16px;
+}
+
+.achievement-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete-btn {
+    margin-left: 10px;
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
