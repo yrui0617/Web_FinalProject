@@ -32,7 +32,7 @@
                         <a href="about-us.html"><i class="fas fa-info-circle"></i> <span>About Us</span></a>
                     </li>
                     <li>
-                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> <span>Log Out</span></a>
+                        <a href="#"><i class="fas fa-sign-out-alt"></i> <span>Log Out</span></a>
                     </li>
                 </ul>
             </nav>
@@ -97,10 +97,9 @@
                     const malayContainer = document.getElementById("malay-achievements");
                     const chineseContainer = document.getElementById("chinese-achievements");
 
-                    // Hide containers initially
-                        chineseContainer.parentElement.style.display = "none";
-                        malayContainer.parentElement.style.display = "none";
-
+                    // Hide both containers initially
+                    malayContainer.parentElement.style.display = "none";
+                    chineseContainer.parentElement.style.display = "none";
 
                     userAchievements.forEach(item => {
                         const block = document.createElement("div");
@@ -111,38 +110,9 @@
                                 <div class="achievement-name">${item.name}</div>
                                 <div class="achievement-date">${new Date(item.completedTime).toLocaleString()}</div>
                             </div>
-                            <div class="achievement-actions">
-                                <div class="achievement-status">${item.status}</div>
-                                <button class="delete-btn" data-id="${item.id}">
-                                    <i class="fas fa-trash"></i> Delete
-                                </button>
-                            </div>
+                            <div class="achievement-status">${item.status}</div>
                         </div>
                     `;
-
-                        // Delete Achievement
-                        const deleteBtn = block.querySelector(".delete-btn");
-
-                        deleteBtn.addEventListener("click", () => {
-                            const achievementId = deleteBtn.getAttribute("data-id");
-
-                            if (confirm("Are you sure you want to delete this achievement?")) {
-                                fetch(`http://localhost:8080/api/Achievement/${achievementId}`, {
-                                    method: "DELETE"
-                                })
-                                    .then(response => {
-                                        if (response.ok) {
-                                            block.remove();
-                                        } else {
-                                            throw new Error("Failed to delete achievement.");
-                                        }
-                                    })
-                                    .catch(error => {
-                                        console.error("Delete error:", error);
-                                        alert("Error deleting achievement.");
-                                    });
-                            }
-                        });
 
                         if (item.name.toLowerCase().startsWith("malay") && selectedLanguage === "Malay") {
                             malayContainer.appendChild(block);
@@ -157,6 +127,7 @@
                     console.error("Failed to load achievements:", error);
                 });
         }
+
 
         // Back to Language Selected Page
         document.getElementById('learnLink').addEventListener('click', function (e) {

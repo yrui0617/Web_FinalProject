@@ -60,7 +60,7 @@ public class UserController {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Incorrect password");
             }
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found by email");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }
 
