@@ -141,7 +141,7 @@
                 return;
             }
 
-            fetch(`http://localhost:8080/api/Achievement/filterBy/${userId}`)
+            fetch(`/api/Achievement/filterBy/${userId}`)
                 .then(response => response.json())
                 .then(userAchievements => {
                     const malayContainer = document.getElementById("malay-achievements");

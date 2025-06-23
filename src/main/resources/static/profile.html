@@ -81,7 +81,7 @@
         if (!userId) {
             alert("User not logged in");
         } else {
-            fetch(`http://localhost:8080/api/User/${userId}`)
+            fetch(`/api/User/${userId}`)
                 .then(response => response.json())
                 .then(user => {
                     document.getElementById("userName").textContent = user.name;
@@ -92,7 +92,7 @@
                     console.error("Error fetching user data:", error);
                 });
 
-            fetch(`http://localhost:8080/api/User/${userId}/profile-picture`)
+            fetch(`/api/User/${userId}/profile-picture`)
                 .then(res => {
                     if (res.ok) return res.blob();
                 })
@@ -131,7 +131,7 @@
 
             const updatedUser = { name: newName, email: newEmail, phone: newPhone, password: newPassword };
 
-            fetch(`http://localhost:8080/api/User/${userId}`, {
+            fetch(`/api/User/${userId}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(updatedUser)
@@ -165,14 +165,14 @@
             const formData = new FormData();
             formData.append("image", file);
 
-            fetch(`http://localhost:8080/api/User/${userId}/upload-picture`, {
+            fetch(`/api/User/${userId}/upload-picture`, {
                 method: "POST",
                 body: formData
             })
                 .then(response => {
                     if (!response.ok) throw new Error("Failed to upload image");
                     // Now fetch the updated profile picture as blob
-                    return fetch(`http://localhost:8080/api/User/${userId}/profile-picture`);
+                    return fetch(`/api/User/${userId}/profile-picture`);
                 })
                 .then(response => {
                     if (!response.ok) throw new Error("Failed to fetch image");
@@ -193,7 +193,7 @@
             const userId = localStorage.getItem("userId");
             if (!userId) return;
 
-            fetch(`http://localhost:8080/api/User/${userId}/profile-picture`, {
+            fetch(`/api/User/${userId}/profile-picture`, {
                 method: "DELETE"
             })
                 .then(response => {
