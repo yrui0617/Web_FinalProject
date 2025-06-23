@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:63342")
 @RestController
@@ -30,8 +31,18 @@ public class AchievementController {
     }
 
     @PostMapping
-    public Achievement createAchievement(@RequestBody Achievement achievement) {
-        return achievementRepository.save(achievement);
+    public ResponseEntity<?> createAchievement(@RequestBody Achievement achievement) {
+        Optional<Achievement> existing = achievementRepository
+                .findByNameAndUserId(achievement.getName(), achievement.getUser().getId());
+
+        if (existing.isPresent()) {
+            return ResponseEntity
+                    .status(HttpStatus.CONFLICT)
+                    .body("Achievement already exists for this user.");
+        }
+
+        Achievement savedAchievement = achievementRepository.save(achievement);
+        return ResponseEntity.ok(savedAchievement);
     }
 
     @DeleteMapping("{id}")
