@@ -120,6 +120,12 @@
     border-color: #3498db;
 }
 
+.achievement-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .achievement-text {
     display: flex;
     flex-direction: column;
