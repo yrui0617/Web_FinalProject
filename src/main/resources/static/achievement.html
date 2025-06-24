@@ -111,6 +111,19 @@
         }
 
         function loadAchievements() {
+
+            if (item.name.toLowerCase().startsWith("malay") && selectedLanguage === "Malay") {
+                chineseContainer.parentElement.style.display = "none";
+                malayContainer.appendChild(block);
+                malayContainer.parentElement.style.display = "block";
+                malayCount++;
+            } else if (item.name.toLowerCase().startsWith("chinese") && selectedLanguage === "Chinese") {
+                malayContainer.parentElement.style.display = "none";
+                chineseContainer.appendChild(block);
+                chineseContainer.parentElement.style.display = "block";
+                chineseCount++;
+            }
+
             if (!userId) {
                 alert("User not logged in.");
                 const malayContainer = document.getElementById("malay-achievements");
@@ -128,16 +141,6 @@
                         <div class="achievement-status">Not Logged In</div>
                     </div>
                 `;
-
-                if (selectedLanguage === "Malay") {
-                    chineseContainer.parentElement.style.display = "none";
-                    malayContainer.appendChild(block);
-                    malayContainer.parentElement.style.display = "block";
-                } else if (selectedLanguage === "Chinese") {
-                    malayContainer.parentElement.style.display = "none";
-                    chineseContainer.appendChild(block);
-                    chineseContainer.parentElement.style.display = "block";
-                }
                 return;
             }
 
@@ -175,17 +178,7 @@
                             </div>
                         `;
 
-                        if (item.name.toLowerCase().startsWith("malay") && selectedLanguage === "Malay") {
-                            chineseContainer.parentElement.style.display = "none";
-                            malayContainer.appendChild(block);
-                            malayContainer.parentElement.style.display = "block";
-                            malayCount++;
-                        } else if (item.name.toLowerCase().startsWith("chinese") && selectedLanguage === "Chinese") {
-                            malayContainer.parentElement.style.display = "none";
-                            chineseContainer.appendChild(block);
-                            chineseContainer.parentElement.style.display = "block";
-                            chineseCount++;
-                        }
+
                     });
 
                     updateAchievementCount(malayCount, chineseCount);
