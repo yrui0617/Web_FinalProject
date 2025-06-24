@@ -2,7 +2,6 @@ package com.stiwk2124.project.springboot.backend.controller;
 
 import com.stiwk2124.project.springboot.backend.exception.ResourceNotFoundException;
 import com.stiwk2124.project.springboot.backend.model.Achievement;
-import com.stiwk2124.project.springboot.backend.model.User;
 import com.stiwk2124.project.springboot.backend.repository.AchievementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
