@@ -85,27 +85,6 @@
     </div>
 
     <script>
-        // Load user info
-        const userId = localStorage.getItem('userId');
-        if (userId) {
-            fetch(`http://localhost:8080/api/User/${userId}`)
-                .then(response => response.json())
-                .then(user => {
-                    document.getElementById('userName').textContent = user.name;
-                });
-
-            // Load user avatar
-            fetch(`http://localhost:8080/api/User/${userId}/profile-picture`)
-                .then(res => {
-                    if (res.ok) return res.blob();
-                })
-                .then(blob => {
-                    if (blob) {
-                        document.getElementById('userAvatar').src = URL.createObjectURL(blob);
-                    }
-                });
-        }
-
         // Sample questions data
         const questions = [
             {
@@ -169,6 +148,8 @@
                 updateQuestion();
             } else {
                 // Create new achievement
+                const userId = localStorage.getItem('userId');
+
                 const achievement = {
                     name: 'Malay - Multiple Choice',
                     status: 'Completed',

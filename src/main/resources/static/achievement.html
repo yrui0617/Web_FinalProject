@@ -176,10 +176,12 @@
                         `;
 
                         if (item.name.toLowerCase().startsWith("malay") && selectedLanguage === "Malay") {
+                            chineseContainer.parentElement.style.display = "none";
                             malayContainer.appendChild(block);
                             malayContainer.parentElement.style.display = "block";
                             malayCount++;
                         } else if (item.name.toLowerCase().startsWith("chinese") && selectedLanguage === "Chinese") {
+                            malayContainer.parentElement.style.display = "none";
                             chineseContainer.appendChild(block);
                             chineseContainer.parentElement.style.display = "block";
                             chineseCount++;
