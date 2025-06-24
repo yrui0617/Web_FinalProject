@@ -116,6 +116,23 @@
     text-decoration: underline;
 }
 
+.forgot-password {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.forgot-password a {
+    color: #6a11cb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 480px) {
     .login-box {
         padding: 30px 20px;
