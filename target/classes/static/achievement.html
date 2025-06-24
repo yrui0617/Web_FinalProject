@@ -114,8 +114,6 @@
 
             if (!userId) {
                 alert("User not logged in.");
-                const malayContainer = document.getElementById("malay-achievements");
-                const chineseContainer = document.getElementById("chinese-achievements");
 
                 // Create a placeholder block
                 const block = document.createElement("div");
@@ -129,16 +127,6 @@
                         <div class="achievement-status">Not Logged In</div>
                     </div>
                 `;
-
-                if (selectedLanguage === "Malay") {
-                    chineseContainer.parentElement.style.display = "none";
-                    malayContainer.appendChild(block);
-                    malayContainer.parentElement.style.display = "block";
-                } else if (selectedLanguage === "Chinese") {
-                    malayContainer.parentElement.style.display = "none";
-                    chineseContainer.appendChild(block);
-                    chineseContainer.parentElement.style.display = "block";
-                }
                 return;
             }
 
