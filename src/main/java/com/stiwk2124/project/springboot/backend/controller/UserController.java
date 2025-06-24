@@ -64,6 +64,20 @@ public class UserController {
         }
     }
 
+    @PostMapping("/forgotPassword")
+    public ResponseEntity<?> forgotPassword(@RequestBody User userRequest) {
+        User user = userRepository.findByNameAndEmailAndPhone(
+                userRequest.getName(),
+                userRequest.getEmail(),
+                userRequest.getPhone()
+        );
+
+        if (user != null) {
+            return ResponseEntity.ok("Your password is: " + user.getPassword());
+        } else {
+            return ResponseEntity.status(404).body("User not found with the provided information");
+        }
+    }
 
     @PutMapping("{id}")
     public ResponseEntity<User> updateUser(@PathVariable long id, @RequestBody User user) {
