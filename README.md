@@ -42,7 +42,7 @@ This website supports the following features:
     - Change to your MySQL password
 
 ## Docker image
-  **to ensure that web application can be run without any environment issue**
+  **to ensure that web application can be run locally without any environment issue**
   
   - **1.Write the following command to pull docker image in the terminal of intellij:**
       ````bash
