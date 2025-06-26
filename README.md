@@ -41,10 +41,10 @@ This website supports the following features:
 ### Docker image
   **to ensure that web application can be run without any environment issue**
   
-  - **Write the following command to pull docker image in the terminal of intellij:
+  - **Write the following command to pull docker image in the terminal of intellij:**
       docker pull yrui0617/finalproject:latest
-  - **You can run the docker container after download the docker image by write the following command in the terminal of intellij：
+  - **You can run the docker container after download the docker image by write the following command in the terminal of intellij：**
       run -d -p 8080:8080 yrui0617/finalproject:latest
-  - **If the docker container run successfully, you can go to the url provided in the web browser, it will directly go to index.html
+  - **If the docker container run successfully, you can go to the url provided in the web browser, it will directly go to index.html:**
       http://localhost:8080
 
