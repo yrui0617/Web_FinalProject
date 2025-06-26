@@ -1,5 +1,5 @@
 # GoLanguage
-  - a web application designed to help users learn and practice language skills interactively.
+  - a web application designed to help users learn and practice a new language.
 
 
 ## Project Features
