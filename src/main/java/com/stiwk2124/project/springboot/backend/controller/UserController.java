@@ -40,8 +40,14 @@ public class UserController {
     public ResponseEntity<String> registerUser(@RequestBody User user) {
         // Optional: check if email already exists
         Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
-        if (existingUser.isPresent()) {
+        Optional<User> existingUser2 = userRepository.findByPhone(user.getPhone());
+
+        if (existingUser.isPresent()&&existingUser2.isPresent()) {
+            return ResponseEntity.badRequest().body("Email & Phone already registered.");
+        }else if(existingUser.isPresent()){
             return ResponseEntity.badRequest().body("Email already registered.");
+        }else if (existingUser2.isPresent()) {
+            return ResponseEntity.badRequest().body("Phone already registered.");
         }
 
         userRepository.save(user);
