@@ -34,9 +34,12 @@ This website supports the following features:
 # 🔧 Setup Instructions
 
 ##  Change MySQL Database Configuration at application.properties (/src/main/resources)
-  - spring.datasource.url=jdbc:mysql://localhost:3307/golanguage_db?useSSL=false&serverTimezone=Asia/Kuala_Lumpur  # Change to your MySQL port like 3306
-  - spring.datasource.username=root       # Change to your MySQL username
-  - spring.datasource.password=yourpassword   # Change to your MySQL password
+  - spring.datasource.url=jdbc:mysql://localhost:3307/golanguage_db?useSSL=false&serverTimezone=Asia/Kuala_Lumpur
+    # Change to your MySQL port like change 3307 by 3306
+  - spring.datasource.username=root
+    # Change to your MySQL username
+  - spring.datasource.password=yourpassword   #
+    # Change to your MySQL password
 
 ## Docker image
   **to ensure that web application can be run without any environment issue**
@@ -48,6 +51,8 @@ This website supports the following features:
       ````bash
       run -d -p 8080:8080 yrui0617/finalproject:latest
   - **If the docker container run successfully, you can go to the url provided in the web browser, it will directly go to index.html:**
-      ````bashhttp://localhost:8080
+      ````bash
+      http://localhost:8080
+
   
 
