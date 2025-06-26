@@ -53,6 +53,3 @@ This website supports the following features:
   - **3.If the docker container run successfully, you can go to the url provided in the web browser, it will directly go to index.html:**
       ````bash
       http://localhost:8080
-
-  
-
