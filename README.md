@@ -11,7 +11,7 @@ This website supports the following features:
 
 - **Language Learning**
   - Malay and Chinese available can be selected to learn a new language
-  - Real-time progress tracking and feedback (prompt user to select correct answer and navigate to next question or finish until it chose the correct answer.)
+  - Real-time progress tracking and feedback (prompt user to select correct answer and navigate to next question or finish until the correct answer was chosen.)
   - **Exercise Types**
     - Multiple Choose Question
     - Fill The Blank
